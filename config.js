@@ -30,6 +30,16 @@ window.SHIRT_ORDER_CONFIG = {
     { name: "5XLarge", upcharge: 2 }
   ],
 
+  colors: [
+  "Black",
+  "White",
+  "Navy",
+  "Blue",
+  "Red",
+  "Gray",
+  "Purple"
+],
+
   printLocations: [],
 
   payments: {
