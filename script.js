@@ -23,8 +23,9 @@ const els = {
   shippingFields: document.getElementById('shippingFields'),
   getShippingRate: document.getElementById('getShippingRate'),
   shippingRateMessage: document.getElementById('shippingRateMessage'),
+  colorFamily: document.getElementById('colorFamily'),
   colorOptions: document.getElementById('colorOptions'),
-};
+ };
 
 let activeDiscount = null;
 let currentOrder = null;
