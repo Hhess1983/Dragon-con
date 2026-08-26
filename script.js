@@ -555,6 +555,7 @@ function buildOrder() {
     color: color,
     sizes: sizesText,
     itemCount: calc.itemCount,
+    printImage: image,
     notes: notes,
     subtotal: Number(calc.subtotal.toFixed(2)),
     discountCode: calc.discount.code || '',
@@ -576,6 +577,7 @@ function buildOrder() {
     `Shirt Type: ${payload.shirtType || 'Not selected'}`,
     `Size(s): ${sizesText || 'Not selected'}`,
     `Color: ${color}`,
+    `Design: ${image}`,
     `Delivery: ${payload.deliveryMethod}`,
     deliveryMethod === 'shipping'
       ? `Shipping Address: ${shippingAddress.street1}${shippingAddress.street2 ? ', ' + shippingAddress.street2 : ''}, ${shippingAddress.city}, ${shippingAddress.state} ${shippingAddress.zip}`
