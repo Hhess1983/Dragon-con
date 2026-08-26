@@ -257,8 +257,13 @@ pre { white-space: pre-wrap; word-wrap: break-word; background: #f7f7f8; padding
 
 .site-banner img {
   display: block;
-  width: 100%;
+  width: 70%;
   max-width: 2000px;
   height: auto;
   margin: 0 auto;
+}
+@media (max-width: 600px) {
+  .site-banner img {
+    width: 95%;
+  }
 }
