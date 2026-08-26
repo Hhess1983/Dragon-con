@@ -304,7 +304,7 @@ pre { white-space: pre-wrap; word-wrap: break-word; background: #f7f7f8; padding
   position: relative;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   padding: 13px 10px;
   border: 1px solid var(--line);
   border-radius: 12px;
@@ -329,6 +329,27 @@ pre { white-space: pre-wrap; word-wrap: break-word; background: #f7f7f8; padding
 .color-option:has(input:checked) {
   border: 2px solid var(--accent);
   background: var(--accent-soft);
+}
+
+.color-swatch {
+  width: 28px;
+  height: 28px;
+  min-width: 28px;
+  border-radius: 50%;
+  border: 1px solid #aeb3ba;
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+.color-name {
+  flex: 1;
+  text-align: left;
+}
+
+.color-option:has(input:checked)::after {
+  content: "✓";
+  margin-left: auto;
+  font-weight: 900;
 }
 
 @media (max-width: 600px) {
