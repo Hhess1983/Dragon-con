@@ -257,13 +257,19 @@ pre { white-space: pre-wrap; word-wrap: break-word; background: #f7f7f8; padding
 
 .site-banner img {
   display: block;
-  width: 55%;
-  max-width: 2000px;
+  width: 900px;
+  max-width: 70%;
   height: auto;
   margin: 0 auto;
 }
+
 @media (max-width: 600px) {
+  .site-banner {
+    padding: 12px;
+  }
+
   .site-banner img {
     width: 95%;
+    max-width: 95%;
   }
 }
