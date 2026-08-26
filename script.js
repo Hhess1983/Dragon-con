@@ -58,19 +58,63 @@ function renderSizes() {
     </div>`).join('');
 }
 
-function renderColors() {
-  els.colorOptions.innerHTML = cfg.colors.map((color, i) => `
-    <label class="color-option">
-      <input
-        type="radio"
-        name="shirtColor"
-        value="${color}"
-        ${i === 0 ? 'required' : ''}
-      >
-      <span>${color}</span>
-    </label>
-  `).join('');
+function getColorCatalog() {
+  return cfg.colorCatalogs.gildanShortSleeve;
 }
+function renderColorFamilies() {
+  const catalog = getColorCatalog();
+
+  const families = Object.keys(catalog);
+
+  els.colorFamily.disabled = false;
+
+  els.colorFamily.innerHTML = `
+    <option value="">
+      Choose a color family
+    </option>
+
+    ${families.map(family => `
+      <option value="${family}">
+        ${family}
+      </option>
+    `).join('')}
+  `;
+
+  els.colorOptions.innerHTML = '';
+}
+function renderColorShades(family) {
+  const catalog = getColorCatalog();
+
+  if (!family) {
+    els.colorOptions.innerHTML = '';
+    return;
+  }
+
+  const colors = catalog[family] || [];
+
+  els.colorOptions.innerHTML =
+    colors.map(color => `
+      <label class="color-option">
+
+        <input
+          type="radio"
+          name="shirtColor"
+          value="${color.name}"
+        >
+
+        <span
+          class="color-swatch"
+          style="background-color: ${color.hex};"
+        ></span>
+
+        <span class="color-name">
+          ${color.name}
+        </span>
+
+      </label>
+    `).join('');
+}
+
 
 function renderPrintLocations() {
   els.locations.innerHTML = cfg.printLocations.map(item => `
@@ -90,8 +134,8 @@ function renderPayments() {
 }
 
 renderSizes();
+renderColorFamilies();
 renderPayments();
-renderColors();
 
 function selectedRadio(name) {
   const selected = document.querySelector(`input[name="${name}"]:checked`);
