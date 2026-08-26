@@ -24,10 +24,10 @@ window.SHIRT_ORDER_CONFIG = {
     { name: "Medium", upcharge: 0 },
     { name: "Large", upcharge: 0 },
     { name: "XLarge", upcharge: 0 },
-    { name: "2XLarge", upcharge: 3 },
-    { name: "3XLarge", upcharge: 3 },
-    { name: "4XLarge", upcharge: 3 },
-    { name: "5XLarge", upcharge: 3 }
+    { name: "2XLarge", upcharge: 2 },
+    { name: "3XLarge", upcharge: 2 },
+    { name: "4XLarge", upcharge: 2 },
+    { name: "5XLarge", upcharge: 2 }
   ],
 
   printLocations: [],
