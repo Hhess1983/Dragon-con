@@ -539,6 +539,7 @@ function buildOrder() {
   const orderId = `SO-${Date.now().toString().slice(-6)}`;
   const customer = document.getElementById('customerName').value.trim();
   const color = selectedRadio('shirtColor')?.value || '';
+  const image = "Dragon Con";
   const notes = document.getElementById('notes').value.trim();
   const customerEmail = document.getElementById('customerEmail').value.trim();
   const deliveryMethod = getDeliveryMethod();
