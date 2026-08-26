@@ -91,6 +91,7 @@ function renderPayments() {
 
 renderSizes();
 renderPayments();
+renderColors();
 
 function selectedRadio(name) {
   const selected = document.querySelector(`input[name="${name}"]:checked`);
@@ -537,8 +538,7 @@ function buildOrder() {
   const p = paymentKey ? cfg.payments[paymentKey] : null;
   const orderId = `SO-${Date.now().toString().slice(-6)}`;
   const customer = document.getElementById('customerName').value.trim();
-  const color = document.getElementById('shirtColor').value.trim();
-  const image = document.getElementById('printImage').value.trim();
+  const color = selectedRadio('shirtColor')?.value || '';
   const notes = document.getElementById('notes').value.trim();
   const customerEmail = document.getElementById('customerEmail').value.trim();
   const deliveryMethod = getDeliveryMethod();
@@ -554,7 +554,6 @@ function buildOrder() {
     color: color,
     sizes: sizesText,
     itemCount: calc.itemCount,
-    printImage: image,
     notes: notes,
     subtotal: Number(calc.subtotal.toFixed(2)),
     discountCode: calc.discount.code || '',
@@ -583,7 +582,6 @@ function buildOrder() {
     deliveryMethod === 'shipping'
       ? `Shipping: ${shippingQuote.provider} ${shippingQuote.service} - ${money.format(calc.shippingAmount)}`
       : '',
-    `Print Image: ${image}`,
     `Garment subtotal: ${money.format(calc.garmentSubtotal)}`,
     calc.sizeSubtotal ? `Size upcharges: ${money.format(calc.sizeSubtotal)}` : '',
     calc.discount.amount ? `Discount (${calc.discount.code}): -${money.format(calc.discount.amount)}` : '',
