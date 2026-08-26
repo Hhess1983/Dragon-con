@@ -248,6 +248,15 @@ pre { white-space: pre-wrap; word-wrap: break-word; background: #f7f7f8; padding
   .shipping-grid {
     grid-template-columns: 1fr;
   }
+
+  .shipping-grid .full-width {
+    grid-column: auto;
+  }
+}
+
+
+/* HEADER BANNER */
+
 .site-banner {
   width: 100%;
   padding: 20px 24px;
@@ -257,7 +266,7 @@ pre { white-space: pre-wrap; word-wrap: break-word; background: #f7f7f8; padding
 
 .site-banner img {
   display: block;
-  width: 900px;
+  width: 800px;
   max-width: 70%;
   height: auto;
   margin: 0 auto;
