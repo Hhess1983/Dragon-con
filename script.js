@@ -138,6 +138,14 @@ renderSizes();
 renderColorFamilies();
 renderPayments();
 
+els.colorFamily.addEventListener('change', () => {
+  renderColorShades(
+    els.colorFamily.value
+  );
+
+  update();
+});
+
 function selectedRadio(name) {
   const selected = document.querySelector(`input[name="${name}"]:checked`);
   if (selected) return selected;
