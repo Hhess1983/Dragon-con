@@ -23,6 +23,7 @@ const els = {
   shippingFields: document.getElementById('shippingFields'),
   getShippingRate: document.getElementById('getShippingRate'),
   shippingRateMessage: document.getElementById('shippingRateMessage'),
+  colorOptions: document.getElementById('colorOptions'),
 };
 
 let activeDiscount = null;
@@ -55,6 +56,20 @@ function renderSizes() {
         <input type="number" class="size-qty" data-size="${item.name}" min="1" max="99" value="1" disabled inputmode="numeric">
       </div>
     </div>`).join('');
+}
+
+function renderColors() {
+  els.colorOptions.innerHTML = cfg.colors.map((color, i) => `
+    <label class="color-option">
+      <input
+        type="radio"
+        name="shirtColor"
+        value="${color}"
+        ${i === 0 ? 'required' : ''}
+      >
+      <span>${color}</span>
+    </label>
+  `).join('');
 }
 
 function renderPrintLocations() {
