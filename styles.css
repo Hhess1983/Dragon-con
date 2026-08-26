@@ -84,6 +84,17 @@ pre { white-space: pre-wrap; word-wrap: break-word; background: #f7f7f8; padding
 .dialog-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
 .dialog-actions .primary-button { width: auto; }
 
+#colorFamily {
+  width: 100%;
+  padding: 13px 14px;
+  margin-bottom: 16px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: #fbfbfc;
+  font: inherit;
+  color: var(--text);
+}
+
 @media (max-width: 900px) { 
   .layout { grid-template-columns: 1fr; }
   .form-column { order: 1; }
