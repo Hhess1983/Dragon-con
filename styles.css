@@ -248,6 +248,20 @@ pre { white-space: pre-wrap; word-wrap: break-word; background: #f7f7f8; padding
   .shipping-grid {
     grid-template-columns: 1fr;
   }
+  .site-banner {
+  width: 100%;
+  padding: 20px 24px;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.site-banner img {
+  display: block;
+  width: 100%;
+  max-width: 2000px;
+  height: auto;
+  margin: 0 auto;
+}
 
   .shipping-grid .full-width {
     grid-column: auto;
