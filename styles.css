@@ -282,3 +282,46 @@ pre { white-space: pre-wrap; word-wrap: break-word; background: #f7f7f8; padding
     max-width: 95%;
   }
 }
+
+.color-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.color-option {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 13px 10px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: #fff;
+  cursor: pointer;
+  font-weight: 700;
+  text-align: center;
+  transition: .15s ease;
+}
+
+.color-option:hover {
+  background: #f7f7f8;
+  border-color: #a8adb5;
+}
+
+.color-option input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.color-option:has(input:checked) {
+  border: 2px solid var(--accent);
+  background: var(--accent-soft);
+}
+
+@media (max-width: 600px) {
+  .color-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
