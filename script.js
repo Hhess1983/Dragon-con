@@ -656,22 +656,50 @@ function continueToPaymentAfterSubmit() {
   const payment = currentOrder.payment;
   const orderNumber = currentOrder.payload.orderNumber;
   const total = money.format(currentOrder.payload.total);
+  const paymentMethod =
+    String(currentOrder.payload.paymentMethod || '')
+      .trim()
+      .toLowerCase();
 
-  // No redirects or external login pages.
-  if (currentOrder.payload.paymentMethod === 'Cash') {
+  if (paymentMethod === 'cash') {
     els.submitStatus.innerHTML =
       `Order <strong>${orderNumber}</strong> has been submitted.<br>` +
       `Total: <strong>${total}</strong><br>` +
       `Payment method: <strong>Cash</strong><br>` +
       `Please pay when the order is picked up.`;
+
+  } else if (paymentMethod === 'paypal') {
+    els.submitStatus.innerHTML =
+      `Order <strong>${orderNumber}</strong> has been submitted.<br>` +
+      `Total: <strong>${total}</strong><br><br>` +
+
+      `<a
+        href="https://paypal.me/KHess270"
+        target="_blank"
+        rel="noopener noreferrer"
+        style="
+          display:inline-block;
+          padding:12px 20px;
+          background:#0070BA;
+          color:#ffffff;
+          text-decoration:none;
+          border-radius:8px;
+          font-weight:bold;
+        "
+      >
+        Pay ${total} with PayPal
+      </a><br><br>` +
+
+      `Please include <strong>${orderNumber}</strong> in the payment note.`;
+
   } else {
     els.submitStatus.innerHTML =
       `Order <strong>${orderNumber}</strong> has been submitted.<br>` +
       `Total: <strong>${total}</strong><br>` +
-      `Open the ${payment.label} app and send payment to <strong>${payment.handle}</strong>.<br>` +
+      `Open the ${payment.label} app and send payment to ` +
+      `<strong>${payment.handle}</strong>.<br>` +
       `Please include <strong>${orderNumber}</strong> in the payment note.`;
   }
-
 }
 
 async function submitOrderToSheet() {
