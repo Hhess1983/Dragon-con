@@ -140,20 +140,10 @@ colorCatalogs: {
   printLocations: [],
 
   payments: {
-    venmo: {
-      label: "Venmo",
-      handle: "@Heather-Hess-108",
-      url: ""
-    },
-    cashapp: {
-      label: "Cash App",
-      handle: "$Hhess1983",
-      url: ""
-    },
-    cash: {
-      label: "Cash",
-      handle: "",
-      url: ""
+     paypal: {
+    label: "PayPal",
+    handle: "@KHess270",
+    url: "https://paypal.me/KHess270"
     }
   }
 };
