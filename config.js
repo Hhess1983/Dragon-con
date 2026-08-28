@@ -14,7 +14,7 @@ window.SHIRT_ORDER_CONFIG = {
 
 
   products: {
-    "Short Sleeve T-Shirt": [
+    "Gildan Short Sleeve T-Shirt": [
       { brand: "Standard", garmentPrice: 18 }
     ]
   },
